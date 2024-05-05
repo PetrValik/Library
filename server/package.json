@@ -1,0 +1,33 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "User library for managing books",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PetrValik/Library.git"
+  },
+  "keywords": [
+    "web",
+    "server",
+    "http",
+    "framework",
+    "nodejs",
+    "express"
+  ],
+  "author": "PetrValik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PetrValik/Library/issues"
+  },
+  "homepage": "https://github.com/PetrValik/Library#readme",
+  "dependencies": {
+    "ajv": "^8.13.0",
+    "ajv-formats": "^3.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
