@@ -11,6 +11,7 @@ const bookDatabase = require("../../database/bookDatabase.js");
 const schema = {
   type: "object",
   properties: {
+    user: "string", minLength: 32, maxLength: 32,
     name: { type: "string", minLength: 3 },
     author: { type: "array", items: 
     {
@@ -18,7 +19,7 @@ const schema = {
     }
   },
     pages: { type: "int"},
-    reelaseDate: { type: "int"},
+    releaseDate: { type: "int"},
     Description: { type: "string", minLength: 3 },
     categories: { type: "array", items: 
       {
@@ -26,7 +27,7 @@ const schema = {
       }
     },
   },
-  required: ["name", "author"],
+  required: ["user", "name", "author"],
   additionalProperties: false,
 };
 
@@ -46,7 +47,7 @@ async function CreateBook(req, res) {
     }
 
     const bookList = bookDatabase.list();
-    const bookExists = bookList.some((u) => u.name === book.name);
+    const bookExists = bookList.some((u) => u.name === book.name && u.user === book.user);
     if (bookExists) {
       res.status(400).json({
         code: "bookAlreadyExists",
