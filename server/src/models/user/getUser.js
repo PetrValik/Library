@@ -6,16 +6,16 @@ const userDatabase = require("../../database/userDatabase.js");
 const schema = {
   type: "object",
   properties: {
-    id: { type: "string", minLength: 32, maxLength: 32 },
+    name: { type: "string"},
   },
-  required: ["id"],
+  required: ["name"],
   additionalProperties: false,
 };
 
 async function GetUser(req, res) {
   try {
     // get request query or body
-    const reqParams = req.query?.id ? req.query : req.body;
+    const reqParams = req.query?.name ? req.query : req.body;
 
     // validate input
     const valid = ajv.validate(schema, reqParams);
@@ -29,7 +29,7 @@ async function GetUser(req, res) {
     }
 
     // read user by given id
-    const user = userDatabase.get(reqParams.id);
+    const user = userDatabase.get(reqParams.name);
     if (!user) {
       res.status(404).json({
         code: "userNotFound",

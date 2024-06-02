@@ -33,6 +33,7 @@ const schema = {
 
 async function CreateBook(req, res) {
   try {
+    console.log(`CreateBook`);
     let book = req.body;
 
     // validate input

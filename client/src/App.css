@@ -1,0 +1,58 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info span {
+  margin-right: 1rem;
+}
+
+.main {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  padding: 1rem;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.dashboard {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.form-container {
+  padding: 1rem;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container form label {
+  margin-bottom: 1rem;
+}
+
+.form-container form button {
+  margin-right: 1rem;
+}

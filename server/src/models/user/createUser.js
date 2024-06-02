@@ -22,7 +22,7 @@ const schema = {
 async function CreateUser(req, res) {
   try {
     let user = req.body;
-
+    console.log(`user created try`);
     // validate input
     const valid = ajv.validate(schema, user);
     if (!valid) {
