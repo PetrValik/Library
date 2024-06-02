@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
 
 const Register = () => {
-  const [Name, setUserName] = useState('');
-  const [Surname, setUserSurname] = useState('');
-  const [Mail, setUserMail] = useState('');
+  const [name, setUserName] = useState('');
+  const [surname, setUserSurname] = useState('');
+  const [email, setUserMail] = useState('');
   const { register } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await register(Name, Surname, Mail);
+      await register(name, surname, email);
       navigate('/');
     } catch (error) {
       console.error('Error registering user:', error);
@@ -28,7 +28,7 @@ const Register = () => {
           Name:
           <input
             type="text"
-            value={Name}
+            value={name}
             onChange={(e) => setUserName(e.target.value)}
           />
         </label>
@@ -36,7 +36,7 @@ const Register = () => {
           Surname:
           <input
             type="text"
-            value={Surname}
+            value={surname}
             onChange={(e) => setUserSurname(e.target.value)}
           />
         </label>
@@ -44,7 +44,7 @@ const Register = () => {
           Mail:
           <input
             type="mail"
-            value={Mail}
+            value={email}
             onChange={(e) => setUserMail(e.target.value)}
           />
         </label>

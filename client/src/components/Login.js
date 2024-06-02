@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [name, setUsername] = useState('');
   const { login } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(username);
+      await login(name);
       navigate('/');
     } catch (error) {
       console.error('Error logging in:', error);
@@ -25,7 +25,7 @@ const Login = () => {
           Username:
           <input
             type="text"
-            value={username}
+            value={name}
             onChange={(e) => setUsername(e.target.value)}
           />
         </label>

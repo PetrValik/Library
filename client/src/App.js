@@ -8,6 +8,8 @@ import AddReview from './components/AddReview';
 import AddCategory from './components/AddCategory';
 import Login from './components/Login';
 import Register from './components/Register';
+import BookDetail from './components/BookDetail';
+import CategoriesAndUsers from './components/CategoriesAndUsers';
 import { UserProvider } from './context/UserContext';
 import './App.css';
 
@@ -26,6 +28,8 @@ function App() {
               <Route path="/add-category" element={<AddCategory />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/book/:id" element={<BookDetail />} />
+              <Route path="/categories-users" element={<CategoriesAndUsers />} />
             </Routes>
           </div>
         </div>

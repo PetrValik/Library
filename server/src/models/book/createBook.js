@@ -56,7 +56,7 @@ async function CreateBook(req, res) {
       });
       return;
     }
-
+    console.log("Book " + book + " was created");
     book = bookDatabase.create(book);
     res.json(book);
   } catch (e) {

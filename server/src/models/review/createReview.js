@@ -11,18 +11,17 @@ const reviewDatabase = require("../../database/reviewDatabase.js");
 const schema = {
   type: "object",
   properties: {
-    bookid: { type: "string", minLength: 32, maxLength: 32 },
+    bookId: { type: "string", minLength: 32, maxLength: 32 },
     userId: { type: "string", minLength: 32, maxLength: 32 },
     text: { type: "string"},
   },
-  required: ["bookid", "userId", "text"],
+  required: ["bookId", "userId", "text"],
   additionalProperties: false,
 };
 
 async function CreateReview(req, res) {
   try {
     let review = req.body;
-
     // validate input
     const valid = ajv.validate(schema, review);
     if (!valid) {
@@ -33,7 +32,8 @@ async function CreateReview(req, res) {
       });
       return;
     }
-    
+
+    console.log("Review " + review + " was created");
     review = reviewDatabase.create(review);
     res.json(review);
   } catch (e) {

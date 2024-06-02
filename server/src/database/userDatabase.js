@@ -5,9 +5,9 @@ const crypto = require("crypto");
 const userFolderPath = path.join(__dirname, "storage", "userDatabase");
 
 // Method to read an user from a file
-function get(userId) {
+function get(id) {
   try {
-    const filePath = path.join(userFolderPath, `${userId}.json`);
+    const filePath = path.join(userFolderPath, `${id}.json`);
     const fileData = fs.readFileSync(filePath, "utf8");
     return JSON.parse(fileData);
   } catch (error) {

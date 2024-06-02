@@ -6,11 +6,16 @@ const UserContext = createContext();
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  const login = async (username) => {
+  const login = async (name) => {
     try {
-      const response = await axios.get('http://localhost:3001/user/get', { params: { username } });
-      setUser(response.data);
+      const response = await axios.get('http://localhost:3001/user/list');
+      const userList = response.data;
+      const user = userList.find(user => user.name == name);
+      if (user) {
+        setUser(user);
+      } 
     } catch (error) {
+      alert("User not found", error);
       console.error('Error fetching user:', error);
     }
   };

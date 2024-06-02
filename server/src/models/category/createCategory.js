@@ -41,7 +41,7 @@ async function CreateCategory(req, res) {
       });
       return;
     }
-
+    console.log("Category " + category + " was created");
     category = categoryDatabase.create(category);
     res.json(category);
   } catch (e) {

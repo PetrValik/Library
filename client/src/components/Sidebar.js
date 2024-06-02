@@ -4,10 +4,23 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <Link to="/">Dashboard</Link>
-      <Link to="/add-book">Add Book</Link>
-      <Link to="/add-review">Add Review</Link>
-      <Link to="/add-category">Add Category</Link>
+      <ul>
+        <li>
+          <Link to="/">Dashboard</Link>
+        </li>
+        <li>
+          <Link to="/add-book">Add Book</Link>
+        </li>
+        <li>
+          <Link to="/add-review">Add Review</Link>
+        </li>
+        <li>
+          <Link to="/add-category">Add Category</Link>
+        </li>
+        <li>
+          <Link to="/categories-users">Categories and Users</Link>
+        </li>
+      </ul>
     </div>
   );
 };
