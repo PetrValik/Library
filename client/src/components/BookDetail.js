@@ -69,7 +69,7 @@ const BookDetail = () => {
       <p><strong>Author(s):</strong> {book.author.join(', ')}</p>
       <p><strong>Pages:</strong> {book.pages}</p>
       <p><strong>Release Date:</strong> {book.releaseDate}</p>
-      <p><strong>Description:</strong> {book.Description}</p>
+      <p><strong>Description:</strong> {book.description}</p>
       <p><strong>Categories:</strong> {categories.join(', ')}</p>
 
       <h3>Reviews</h3>
